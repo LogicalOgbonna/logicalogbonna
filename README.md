@@ -1,6 +1,7 @@
-<h1><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> Hey! Nice to see you.</h1>
+<h1><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> Oh hey! You found me 👀.</h1>
 
-<p>Welcome to my world! </br> I'm Arinze, Fullstack Software Engineer from <b>Port Harcourt, Nigeria</b></p>
+<p>Welcome to my corner of the internet! </br> I'm Arinze, Fullstack Software Engineer from <b>Port Harcourt, Nigeria</b></p>
+<p>I build things for the web, break them for fun, and fix them for survival.</p>
 
 <h2>Tools I Use</h2>
 
@@ -109,6 +110,8 @@
                     <img alt="React Testing Library" src="https://img.shields.io/badge/-React Testing Library-764ABC?style=flat-square&logo=react&logoColor=white" />
                     <img alt="Vitest" src="https://img.shields.io/badge/-Vitest-764ABC?style=flat-square&logo=vitest&logoColor=white" />
                     <img alt="jest" src="https://img.shields.io/badge/-Jest-764ABC?style=flat-square&logo=jest&logoColor=white" />
+                    <img alt="playwright" src="https://img.shields.io/badge/-Playwright-764ABC?style=flat-square&logo=playwright&logoColor=white" />
+                    <img alt="Cypress" src="https://img.shields.io/badge/-Cypress-764ABC?style=flat-square&logo=Cypress&logoColor=white" />
                 </p>
             </td>
             <td>
@@ -116,6 +119,7 @@
                     <img alt="webpack" src="https://img.shields.io/badge/-webpack-764ABC?style=flat-square&logo=webpack&logoColor=white" />
                     <img alt="Vite" src="https://img.shields.io/badge/-Vite-764ABC?style=flat-square&logo=Vite&logoColor=white" />
                     <img alt="Turborepo" src="https://img.shields.io/badge/-Turborepo-764ABC?style=flat-square&logo=Turborepo&logoColor=white" />
+                    <img alt="Docker" src="https://img.shields.io/badge/-Docker-764ABC?style=flat-square&logo=Docker&logoColor=white" />
                 </p>
             </td>
         </tr>
