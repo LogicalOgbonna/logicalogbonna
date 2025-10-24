@@ -11,7 +11,7 @@
       <td><b>🏃⌛️ Runtime</b></td>
       <td><b>🖼️🚶‍♀️ Framework</b></td>
       <td><b>Library</b></td>
-      <td><b>DB</b></td>
+      <!-- <td><b>DB</b></td> -->
     </tr>
   </thead>
   <tbody>
@@ -43,12 +43,12 @@
             <img alt="Express" src="https://img.shields.io/badge/-Express-ea2845?style=flat-square&logo=express&logoColor=white" />
         </p>
     </td>
-    <td>
+    <!-- <td>
         <p>
             <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
   <img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-13aa52?style=flat-square&logo=postgresql&logoColor=white" />
         </p>
-    </td>
+    </td> -->
     </tr>
   </tbody>
 </table>
