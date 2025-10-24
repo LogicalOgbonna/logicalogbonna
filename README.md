@@ -80,8 +80,6 @@
             <td>
                 <p>
                     <img alt="redux" src="https://img.shields.io/badge/-Redux-F05032?style=flat-square&logo=redux&logoColor=white" />
-                </p>
-                <p>
                     <img alt="zustand" src="https://img.shields.io/badge/-Zustand-F05032?style=flat-square&logo=laravelhorizon&logoColor=white" />
                 </p>
             </td>
