@@ -1,65 +1,102 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero — Declarative, no explanation */}
+      <section className="mb-32">
+        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-stone-900 dark:text-stone-100 mb-6">
+          Arinze Ogbonna
+        </h1>
+        <p className="text-2xl md:text-3xl text-stone-700 dark:text-stone-300 font-light leading-snug max-w-lg">
+          I build systems that don&apos;t break under pressure.
+        </p>
+        <div className="mt-10 text-stone-500 dark:text-stone-400 text-sm leading-relaxed max-w-md">
+          <p>
+            Senior software engineer.
+            <br />
+            Frontend, backend, QA automation, infrastructure.
+            <br />
+            I ship production systems and write about the thinking behind them.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Contrast Statement */}
+      <section className="mb-24">
+        <div className="border-l-2 border-stone-300 dark:border-stone-700 pl-6 py-2">
+          <p className="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+            Most portfolios show outcomes.
+          </p>
+          <p className="text-lg text-stone-900 dark:text-stone-100 font-medium mt-1">
+            This one shows decisions.
+          </p>
         </div>
-      </main>
-    </div>
+        <div className="mt-10 flex flex-wrap gap-8 text-sm">
+          <Link
+            href="/work"
+            className="text-stone-900 dark:text-stone-100 font-medium hover:text-stone-600 dark:hover:text-stone-400 transition-colors"
+          >
+            → Work
+          </Link>
+          <Link
+            href="/journal"
+            className="text-stone-900 dark:text-stone-100 font-medium hover:text-stone-600 dark:hover:text-stone-400 transition-colors"
+          >
+            → Journal
+          </Link>
+          <Link
+            href="/writing"
+            className="text-stone-900 dark:text-stone-100 font-medium hover:text-stone-600 dark:hover:text-stone-400 transition-colors"
+          >
+            → Writing
+          </Link>
+        </div>
+      </section>
+
+      {/* What I Do — Opinionated, outcome-focused */}
+      <section className="mb-24">
+        <h2 className="text-xs font-medium text-stone-400 dark:text-stone-500 uppercase tracking-widest mb-6">
+          What I do
+        </h2>
+        <ul className="space-y-3 text-stone-700 dark:text-stone-300">
+          <li className="flex items-start gap-3">
+            <span className="text-stone-400 dark:text-stone-600 select-none">—</span>
+            <span>Build systems that survive real users</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-stone-400 dark:text-stone-600 select-none">—</span>
+            <span>Turn ambiguity into shipped features</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-stone-400 dark:text-stone-600 select-none">—</span>
+            <span>Prevent failures before they become incidents</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-stone-400 dark:text-stone-600 select-none">—</span>
+            <span>Write tests so teams can move faster, not slower</span>
+          </li>
+        </ul>
+      </section>
+
+      {/* Signature Line — Standalone, memorable */}
+      <section className="mb-24">
+        <p className="text-xl md:text-2xl text-stone-800 dark:text-stone-200 font-serif italic leading-relaxed max-w-lg">
+          &quot;Clarity scales. Cleverness doesn&apos;t.&quot;
+        </p>
+      </section>
+
+      {/* Credibility — Understated */}
+      <section>
+        <h2 className="text-xs font-medium text-stone-400 dark:text-stone-500 uppercase tracking-widest mb-6">
+          Background
+        </h2>
+        <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed max-w-md">
+          Enterprise-scale React & Next.js applications. QA automation and
+          CI/CD pipelines. API-heavy systems. Teams that value quality over
+          chaos.
+        </p>
+      </section>
+    </>
   );
 }

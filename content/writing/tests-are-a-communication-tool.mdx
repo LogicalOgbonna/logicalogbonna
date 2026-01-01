@@ -1,0 +1,69 @@
+---
+title: "Tests Are a Communication Tool"
+date: "2026-01-08"
+description: "Tests do more than verify code. They document intent."
+tags: ["testing", "software-engineering", "documentation"]
+---
+
+Most engineers think of tests as verification tools. You write code, you write tests, the tests check if the code works.
+
+That's true, but it misses the bigger picture.
+
+**Tests are documentation that can't become outdated.**
+
+## The problem with documentation
+
+Traditional documentation has a fatal flaw: it lies. Not intentionally, but inevitably.
+
+Code changes. Comments don't always change with it. READMEs drift. Wikis become graveyards. The only documentation you can truly trust is the code itself.
+
+But code doesn't always explain *why*. It shows what happens, not what was intended.
+
+## Tests fill the gap
+
+Well-written tests tell a story:
+
+```typescript
+describe('User Registration', () => {
+  it('requires email and password', () => { /* ... */ });
+  it('rejects passwords shorter than 8 characters', () => { /* ... */ });
+  it('sends a welcome email after successful registration', () => { /* ... */ });
+  it('prevents duplicate email addresses', () => { /* ... */ });
+});
+```
+
+A new engineer reading these tests immediately understands:
+
+- What the feature does
+- What the edge cases are
+- What the expected behavior should be
+
+No hunting through code. No asking around. The tests *are* the specification.
+
+## Writing tests for communication
+
+This changes how you write tests. Instead of:
+
+```typescript
+it('test1', () => { /* ... */ });
+it('should work', () => { /* ... */ });
+```
+
+You write:
+
+```typescript
+it('returns empty array when user has no orders', () => { /* ... */ });
+it('sorts orders by date descending by default', () => { /* ... */ });
+it('throws NotFoundError when user does not exist', () => { /* ... */ });
+```
+
+Each test name is a sentence. Each test tells you something you need to know.
+
+## The compound effect
+
+Over time, a well-tested codebase becomes self-documenting. When you're not sure how something works, you read the tests. When you're making changes, the tests tell you what you might break.
+
+This is why I push for tests even when deadlines are tight. Yes, they take time to write. But they save exponentially more time in the long run—not just in catching bugs, but in communication.
+
+Write tests like they're going to be read. Because they are.
+
