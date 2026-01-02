@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { WeeklyTracks } from '@/components/WeeklyTracks';
 
 export default function Home() {
   return (
@@ -95,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Credibility — Understated */}
-      <section>
+      <section className='mb-24'>
         <h2 className='text-xs font-medium text-stone-400 dark:text-stone-500 uppercase tracking-widest mb-6'>
           Background
         </h2>
@@ -106,6 +108,30 @@ export default function Home() {
           API-heavy systems. Teams that value quality over chaos.
         </p>
       </section>
+
+      {/* Weekly Music */}
+      <Suspense
+        fallback={
+          <section className='mb-24'>
+            <h2 className='text-xs font-medium text-stone-400 dark:text-stone-500 uppercase tracking-widest mb-6'>
+              This Week&apos;s Soundtrack
+            </h2>
+            <div className='space-y-3'>
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className='flex items-center gap-4 py-3'>
+                  <div className='w-5 h-4 bg-stone-200 dark:bg-stone-800 rounded animate-pulse' />
+                  <div className='flex-1 space-y-2'>
+                    <div className='h-4 bg-stone-200 dark:bg-stone-800 rounded w-3/4 animate-pulse' />
+                    <div className='h-3 bg-stone-200 dark:bg-stone-800 rounded w-1/2 animate-pulse' />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        }
+      >
+        <WeeklyTracks />
+      </Suspense>
     </>
   );
 }
