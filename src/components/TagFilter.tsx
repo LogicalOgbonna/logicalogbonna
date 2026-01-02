@@ -57,7 +57,7 @@ export function TagFilter({ posts, allTags }: TagFilterProps) {
                   : "bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700"
               }`}
             >
-              All
+              [All]
             </button>
             {allTags.map((tag) => (
               <button
@@ -69,7 +69,7 @@ export function TagFilter({ posts, allTags }: TagFilterProps) {
                     : "bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700"
                 }`}
               >
-                {tag}
+                {`[${tag}]`}
               </button>
             ))}
           </div>
@@ -77,7 +77,7 @@ export function TagFilter({ posts, allTags }: TagFilterProps) {
             <p className="mt-4 text-sm text-stone-500 dark:text-stone-400">
               Showing {filteredPosts.length} post{filteredPosts.length !== 1 ? "s" : ""} tagged with{" "}
               <span className="font-medium text-stone-700 dark:text-stone-300">
-                {selectedTag}
+                {`[${selectedTag}]`}
               </span>
             </p>
           )}
@@ -114,7 +114,7 @@ export function TagFilter({ posts, allTags }: TagFilterProps) {
                           key={tag}
                           className="px-2 py-0.5 text-[10px] font-medium rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-400"
                         >
-                          {tag}
+                          {`[${tag}]`}
                         </span>
                       ))}
                     </div>

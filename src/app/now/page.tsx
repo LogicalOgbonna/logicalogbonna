@@ -12,7 +12,7 @@ export default function NowPage() {
         Now
       </h1>
       <p className="text-sm text-stone-400 dark:text-stone-500 mb-16">
-        January 2026
+        January {new Date().getFullYear()}
       </p>
 
       <div className="space-y-16">
