@@ -170,6 +170,15 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 }
 
 /* ============================================
+   Torch Cursor - Dark Mode
+   ============================================ */
+
+html.dark,
+html.dark * {
+  cursor: none !important;
+}
+
+/* ============================================
    View Transitions API - Page Transitions
    ============================================ */
 
