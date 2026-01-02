@@ -168,3 +168,68 @@ html.dark ::-webkit-scrollbar-thumb {
 html.dark ::-webkit-scrollbar-thumb:hover {
   background: #57534e;
 }
+
+/* ============================================
+   View Transitions API - Page Transitions
+   ============================================ */
+
+/* Root view transition - the entire page */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Old page fades out and slides slightly left */
+::view-transition-old(root) {
+  animation: page-fade-out 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    page-slide-out 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* New page fades in and slides from the right */
+::view-transition-new(root) {
+  animation: page-fade-in 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    page-slide-in 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes page-slide-in {
+  from {
+    transform: translateX(20px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { Suspense } from 'react';
 import { WeeklyTracks } from '@/components/WeeklyTracks';
+import { ViewTransitionLink } from '@/components/ViewTransitionLink';
 
 export default function Home() {
   return (
@@ -35,24 +35,24 @@ export default function Home() {
           </p>
         </div>
         <div className='mt-10 flex flex-wrap gap-8 text-sm'>
-          <Link
+          <ViewTransitionLink
             href='/work'
             className='text-stone-900 dark:text-stone-100 font-medium hover:text-stone-600 dark:hover:text-stone-400 transition-colors'
           >
             → Work
-          </Link>
-          <Link
+          </ViewTransitionLink>
+          <ViewTransitionLink
             href='/journal'
             className='text-stone-900 dark:text-stone-100 font-medium hover:text-stone-600 dark:hover:text-stone-400 transition-colors'
           >
             → Journal
-          </Link>
-          <Link
+          </ViewTransitionLink>
+          <ViewTransitionLink
             href='/writing'
             className='text-stone-900 dark:text-stone-100 font-medium hover:text-stone-600 dark:hover:text-stone-400 transition-colors'
           >
             → Writing
-          </Link>
+          </ViewTransitionLink>
         </div>
       </section>
 

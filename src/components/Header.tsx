@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
+import { ViewTransitionLink } from './ViewTransitionLink';
 
 const navigation = [
   { name: 'About', href: '/about' },
@@ -19,12 +19,12 @@ export function Header() {
   return (
     <header className='py-8 md:py-12'>
       <nav className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
-        <Link
+        <ViewTransitionLink
           href='/'
           className='text-lg font-medium text-stone-900 dark:text-stone-100 hover:text-stone-600 dark:hover:text-stone-400 transition-colors'
         >
           Arinze Ogbonna
-        </Link>
+        </ViewTransitionLink>
         <div className='flex items-center gap-6'>
           <ul className='flex flex-wrap items-center gap-x-6 gap-y-2 text-sm'>
             {navigation.map((item) => {
@@ -32,7 +32,7 @@ export function Header() {
                 pathname === item.href || pathname.startsWith(`${item.href}/`);
               return (
                 <li key={item.name}>
-                  <Link
+                  <ViewTransitionLink
                     href={item.href}
                     className={`transition-colors ${
                       isActive
@@ -41,7 +41,7 @@ export function Header() {
                     }`}
                   >
                     {item.name}
-                  </Link>
+                  </ViewTransitionLink>
                 </li>
               );
             })}
