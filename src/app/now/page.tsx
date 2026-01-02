@@ -43,7 +43,7 @@ export default function NowPage() {
           <ul className="space-y-2 text-stone-700 dark:text-stone-300">
             <li className="flex items-start gap-3">
               <span className="text-stone-400 dark:text-stone-600 select-none">—</span>
-              <span>Advanced Next.js patterns</span>
+              <span>Micro-Frontend Patterns</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-stone-400 dark:text-stone-600 select-none">—</span>
