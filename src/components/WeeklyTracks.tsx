@@ -72,7 +72,7 @@ export async function WeeklyTracks() {
           last.fm →
         </Link>
       </div>
-      <div className="space-y-1">
+      <div className="space-y-1 overflow-y-auto overflow-x-hidden max-h-48">
         {tracks.map((track, index) => (
           <TrackItem key={`${track.name}-${track.artist.name}`} track={track} rank={index + 1} />
         ))}
