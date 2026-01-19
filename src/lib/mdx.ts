@@ -30,6 +30,7 @@ export interface PostMeta {
   description?: string;
   tags?: string[];
   readingTime: number;
+  acrostic?: boolean;
 }
 
 export interface Post extends PostMeta {
@@ -60,6 +61,7 @@ export function getPostsByType(type: "journal" | "writing"): PostMeta[] {
         description: data.description || "",
         tags: data.tags || [],
         readingTime: calculateReadingTime(content),
+        acrostic: data.acrostic || false,
       };
     })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
@@ -87,6 +89,7 @@ export function getPostBySlug(
     description: data.description || "",
     tags: data.tags || [],
     readingTime: calculateReadingTime(content),
+    acrostic: data.acrostic || false,
     content,
   };
 }

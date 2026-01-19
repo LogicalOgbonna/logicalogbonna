@@ -7,6 +7,14 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { Code } from "@/components/Code";
 import { remarkCodeHike, recmaCodeHike } from "codehike/mdx";
 import type { CodeHikeConfig } from "codehike/mdx";
+import { AcrosticPoem, Highlight, PoemParagraph } from "@/components/AcrosticPoem";
+
+/**
+ * Converts ==text== to <Highlight>text</Highlight> for acrostic poems
+ */
+function processHighlightSyntax(content: string): string {
+  return content.replace(/==([^=]+)==/g, "<Highlight>$1</Highlight>");
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,6 +43,7 @@ const chConfig: CodeHikeConfig = {
   components: { code: "Code" },
 };
 
+// Standard components for regular posts
 const mdxComponents = {
   Code,
   h2: ({ children }: { children: React.ReactNode }) => (
@@ -85,6 +94,17 @@ const mdxComponents = {
     <strong className="font-semibold text-stone-900 dark:text-stone-100">{children}</strong>
   ),
   em: ({ children }: { children: React.ReactNode }) => <em className="italic">{children}</em>,
+  mark: Highlight,
+};
+
+// Components for acrostic poems - focused on poetry display
+const acrosticComponents = {
+  p: PoemParagraph,
+  em: ({ children }: { children: React.ReactNode }) => (
+    <em className="italic text-stone-500 dark:text-stone-400">{children}</em>
+  ),
+  Highlight,
+  AcrosticPoem,
 };
 
 export default async function WritingPostPage({ params }: Props) {
@@ -140,18 +160,27 @@ export default async function WritingPostPage({ params }: Props) {
           )}
         </header>
 
-        <div className="prose">
-          <MDXRemote
-            source={post.content}
-            components={mdxComponents}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [[remarkCodeHike, chConfig]],
-                recmaPlugins: [[recmaCodeHike, chConfig]],
-              },
-            }}
-          />
-        </div>
+        {post.acrostic ? (
+          <AcrosticPoem>
+            <MDXRemote
+              source={processHighlightSyntax(post.content)}
+              components={acrosticComponents}
+            />
+          </AcrosticPoem>
+        ) : (
+          <div className="prose">
+            <MDXRemote
+              source={processHighlightSyntax(post.content)}
+              components={{ ...mdxComponents, Highlight }}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [[remarkCodeHike, chConfig]],
+                  recmaPlugins: [[recmaCodeHike, chConfig]],
+                },
+              }}
+            />
+          </div>
+        )}
       </article>
     </>
   );
