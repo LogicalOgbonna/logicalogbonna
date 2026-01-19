@@ -122,7 +122,7 @@ export function WelcomeModal() {
                             <Link
                                 href="/writing?tag=poetry"
                                 onClick={handleExplorePoems}
-                                className="group inline-flex items-center gap-2 px-6 py-3 bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 rounded-full font-medium text-sm hover:bg-stone-800 dark:hover:bg-stone-200 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                                className="cursor-pointer! group inline-flex items-center gap-2 px-6 py-3 bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 rounded-full font-medium text-sm hover:bg-stone-800 dark:hover:bg-stone-200 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                             >
                                 Beyond the code
                                 <svg
@@ -145,7 +145,7 @@ export function WelcomeModal() {
                             {/* Skip text */}
                             <button
                                 onClick={handleDismiss}
-                                className="mt-4 block w-full text-sm text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-400 transition-colors"
+                                className="cursor-pointer! mt-4 block w-full text-sm text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-400 transition-colors"
                             >
                                 Maybe later
                             </button>
