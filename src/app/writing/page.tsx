@@ -44,7 +44,7 @@ export default function WritingPage() {
         Longer-form pieces where I slow down and think properly.
         <br />
         <span className="text-stone-500 dark:text-stone-500">
-          Software, career, money, systems, failure, trade-offs.
+          Software, career, money, systems, failure, trade-offs, poetry and more.
         </span>
       </p>
 

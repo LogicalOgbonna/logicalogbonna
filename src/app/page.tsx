@@ -1,10 +1,12 @@
 import { Suspense } from 'react';
 import { WeeklyTracks } from '@/components/WeeklyTracks';
 import { ViewTransitionLink } from '@/components/ViewTransitionLink';
+import { WelcomeModal } from '@/components/WelcomeModal';
 
 export default function Home() {
   return (
     <>
+      <WelcomeModal />
       {/* Hero — Declarative, no explanation */}
       <section className='mb-32'>
         <h1 className='font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-stone-900 dark:text-stone-100 mb-6'>
