@@ -173,6 +173,10 @@ export default async function WritingPostPage({ params }: Props) {
               source={processHighlightSyntax(post.content)}
               components={{ ...mdxComponents, Highlight }}
               options={{
+                // Content is authored in-repo (trusted), so allow MDX
+                // expressions; codehike's recma transforms break under the
+                // v6 blockJS default. blockDangerousJS stays on for RCE safety.
+                blockJS: false,
                 mdxOptions: {
                   remarkPlugins: [[remarkCodeHike, chConfig]],
                   recmaPlugins: [[recmaCodeHike, chConfig]],
