@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Newsreader, Outfit, JetBrains_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
@@ -84,6 +85,11 @@ export default function RootLayout({
               })();
             `,
           }}
+        />
+        <Script
+          src='https://cloud.umami.is/script.js'
+          data-website-id='153bd82d-c1ee-4576-b6d6-e8331c2e0aaf'
+          strategy='afterInteractive'
         />
       </head>
       <body
